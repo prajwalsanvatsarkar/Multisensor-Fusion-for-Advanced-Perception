@@ -23,9 +23,17 @@ The goal of this project is to build a system that can estimate how far away veh
 <img width="1225" height="412" alt="image" src="https://github.com/user-attachments/assets/dacbc653-a685-4b80-9ffe-7f293a6e02ec" />
 
 # Step 4: Estimate the Distance
+- For every detected vehicle, we looked at the LiDAR and Radar points that fall inside its bounding box.  
+- From those points, we calculated the average distance to the vehicle for LiDAR and for Radar separately.
 <img width="1412" height="452" alt="image" src="https://github.com/user-attachments/assets/d6b60210-486b-4712-ab91-d33732bc95df" />
 
 # Step 5: Calculate Fused Distance
+- After getting LiDAR and Radar distances, we combined them into one fused value.  
+- We gave LiDAR a higher weight (0.7) and Radar a lower weight (0.3), since LiDAR is usually more precise.  
+- The fused distance was calculated using this formula:  
+\[
+d_{fused} = 0.7 \cdot d_{LiDAR} + 0.3 \cdot d_{Radar}
+\]
 <img width="1423" height="456" alt="image" src="https://github.com/user-attachments/assets/3a983179-0c8a-420e-940b-8c7f147b4089" />
 
 # Step 6: Estimate Mean Absolute Error and Root Mean Squared Error
