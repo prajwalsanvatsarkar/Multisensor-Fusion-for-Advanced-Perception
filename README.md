@@ -1,9 +1,11 @@
 # Multisensor-Fusion-for-Advanced-Perception
 
-The goal of this project is to build a system that can reliably estimate how far away vehicles are by combining camera images with LiDAR and Radar data. YOLO is used to detect vehicles in the images, and then point cloud data from the sensors is projected onto the same image. From there, only the points that fall inside each detected vehicle are kept, and the average distance is calculated. By fusing LiDAR and Radar, the system takes advantage of the strengths of both sensors. Finally, the accuracy of the distance estimates is checked using metrics like Mean Absolute Error (MAE) and Root Mean Square Error (RMSE) to make sure the results are consistent and trustworthy.
+The goal of this project is to build a system that can estimate how far away vehicles are, by combining camera images with LiDAR and Radar data. YOLO is used to detect vehicles in the images, and then point cloud data from the sensors is projected onto the same image. From there, only the points that fall inside each detected vehicle are kept, and the average distance is calculated. By fusing LiDAR and Radar, the system takes advantage of the strengths of both sensors. Finally, the accuracy of the distance estimates is checked using metrics like Mean Absolute Error (MAE) and Root Mean Square Error (RMSE) to make sure the results are consistent and trustworthy.
 
 
 # Step 1: Object Detection with YOLO
+- YOLOv5 is used on the front-camera images to detect vehicles like cars, buses, and trucks.  
+- For each image, the detected vehicles are shown with green boxes and confidence scores, and the results are saved for the next steps.
 <img width="1098" height="362" alt="Screenshot (567)" src="https://github.com/user-attachments/assets/c19a1d3c-7800-4725-96a2-93186712619e" />
 
 # Step 2: Project the point cloud on Image
