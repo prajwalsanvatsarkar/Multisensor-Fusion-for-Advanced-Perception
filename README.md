@@ -30,10 +30,9 @@ The goal of this project is to build a system that can estimate how far away veh
 # Step 5: Calculate Fused Distance
 - After getting LiDAR and Radar distances, we combined them into one fused value.  
 - We gave LiDAR a higher weight (0.7) and Radar a lower weight (0.3), since LiDAR is usually more precise.  
-- The fused distance was calculated using this formula:  
-\[ 
-d_{\text{fused}} = (0.7 \times d_{\text{LiDAR}}) + (0.3 \times d_{\text{Radar}}) 
-\]
+- The fused distance was calculated using this formula:
+- Fused distance: d_fused = 0.7 * d_LiDAR + 0.3 * d_Radar
+
 <img width="1423" height="456" alt="image" src="https://github.com/user-attachments/assets/3a983179-0c8a-420e-940b-8c7f147b4089" />
 
 # Step 6: Estimate Mean Absolute Error and Root Mean Squared Error
