@@ -1,3 +1,26 @@
 # Multisensor-Fusion-for-Advanced-Perception
 
 The objective is to create a system that accurately estimates the distance to vehicles using a combination of image analysis and sensor data fusion. By employing YOLO for vehicle detection in images and integrating RADAR and LiDAR data, the system will project point cloud information onto images, filter relevant points, and estimate distances to detected vehicles. The fusion of RADAR and LiDAR data aims to capitalize on the strengths of each sensor type. The accuracy of distance estimates will be evaluated using metrics like mean absolute error and root mean square error, ensuring the system’s reliability and effectiveness across diverse scenarios
+
+# Step 1: Object Detection with YOLO
+<img width="1098" height="362" alt="Screenshot (567)" src="https://github.com/user-attachments/assets/c19a1d3c-7800-4725-96a2-93186712619e" />
+
+# Step 2: Project the point cloud on Image
+<img width="1281" height="485" alt="image" src="https://github.com/user-attachments/assets/9acc7616-1edd-4d8a-a7ca-3b25d1584f46" />
+<img width="1189" height="420" alt="image" src="https://github.com/user-attachments/assets/fb681865-5891-481c-bb35-bbc59dad9e33" />
+<img width="1214" height="400" alt="image" src="https://github.com/user-attachments/assets/c65ed909-e44b-49d8-89e2-248f5a8d1c87" />
+
+# Step 3: Filter the Points in Bounding Boxes
+<img width="1244" height="411" alt="image" src="https://github.com/user-attachments/assets/404733c2-d93a-4e2a-97ff-e897c47e5489" />
+<img width="1225" height="412" alt="image" src="https://github.com/user-attachments/assets/dacbc653-a685-4b80-9ffe-7f293a6e02ec" />
+
+# Step 4: Estimate the Distance
+<img width="1412" height="452" alt="image" src="https://github.com/user-attachments/assets/d6b60210-486b-4712-ab91-d33732bc95df" />
+
+# Step 5: Calculate Fused Distance
+<img width="1423" height="456" alt="image" src="https://github.com/user-attachments/assets/3a983179-0c8a-420e-940b-8c7f147b4089" />
+
+# Step 6: Estimate Mean Squared Error and Root Mean Squared Error
+In the final step we checked how accurate the distance estimates were using two metrics: Mean Absolute Error (MAE) and Root Mean Square Error (RMSE). Both came out to about 1.13 meters. This means that, on average, our distance estimates were only about a meter off from the actual values. Since MAE and RMSE are almost the same, it also shows there were no big mistakes or outliers. Overall, the system gave very accurate results for estimating vehicle distances.
+
+<img width="1403" height="452" alt="image" src="https://github.com/user-attachments/assets/a408f3e5-4f6d-4ce9-803c-a16944bc0bef" />
