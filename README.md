@@ -17,6 +17,8 @@ The goal of this project is to build a system that can estimate how far away veh
 <img width="1214" height="400" alt="image" src="https://github.com/user-attachments/assets/c65ed909-e44b-49d8-89e2-248f5a8d1c87" />
 
 # Step 3: Filter the Points in Bounding Boxes
+- After projecting LiDAR and Radar points into the image, only those points that fall inside each YOLO bounding box are kept.  
+- This ensures we only work with sensor points that truly belong to the detected vehicles, ignoring the rest of the scene.
 <img width="1244" height="411" alt="image" src="https://github.com/user-attachments/assets/404733c2-d93a-4e2a-97ff-e897c47e5489" />
 <img width="1225" height="412" alt="image" src="https://github.com/user-attachments/assets/dacbc653-a685-4b80-9ffe-7f293a6e02ec" />
 
