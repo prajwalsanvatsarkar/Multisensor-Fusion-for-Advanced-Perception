@@ -9,6 +9,9 @@ The goal of this project is to build a system that can estimate how far away veh
 <img width="1098" height="362" alt="Screenshot (567)" src="https://github.com/user-attachments/assets/c19a1d3c-7800-4725-96a2-93186712619e" />
 
 # Step 2: Project the point cloud on Image
+- LiDAR and Radar points are transformed from their own sensor frames into the camera reference frame using the extrinsic calibration (rotation + translation).  
+- The camera intrinsic matrix is then applied to project these 3D points into 2D pixel coordinates.  
+- Finally, the projected points are overlaid on the camera image, so we can visually confirm that LiDAR and Radar align correctly with the detected vehicles. 
 <img width="1281" height="485" alt="image" src="https://github.com/user-attachments/assets/9acc7616-1edd-4d8a-a7ca-3b25d1584f46" />
 <img width="1189" height="420" alt="image" src="https://github.com/user-attachments/assets/fb681865-5891-481c-bb35-bbc59dad9e33" />
 <img width="1214" height="400" alt="image" src="https://github.com/user-attachments/assets/c65ed909-e44b-49d8-89e2-248f5a8d1c87" />
