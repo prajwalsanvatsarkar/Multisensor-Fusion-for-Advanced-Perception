@@ -36,7 +36,7 @@ The goal of this project is to build a system that can estimate how far away veh
 <img width="1291" height="422" alt="image" src="https://github.com/user-attachments/assets/3020e173-d638-4c00-a91e-8981df920566" />
 
 
-# Step 6: Estimate Mean Absolute Error and Root Mean Squared Error
+# Step 6: Conclusion
 - In conclusion, this report presented a multisensor fusion approach for estimating vehicle distances in the images.
 - The final step evaluates the accuracy using Mean Absolute Error (MAE) and Root Mean Square Error (RMSE), achieving a MAE of 5.49 meters and RMSE of 6.67 meters, indicating good overall accuracy.
 - To resolve these errors, in future instead of filtering projected points in specified bounding box, asegmented mask of vehicle can be considered for estimating the actual vehicle boundary.
