@@ -15,7 +15,6 @@ The goal of this project is to build a system that can estimate how far away veh
 - Finally, the projected points are overlaid on the camera image, so we can visually confirm that LiDAR and Radar align correctly with the detected vehicles. 
 <img width="698" height="257" alt="image" src="https://github.com/user-attachments/assets/bd2a006d-cdad-4168-9f84-b1547bcf443e" />
 <img width="678" height="267" alt="image" src="https://github.com/user-attachments/assets/6e2cbbdf-1ade-4b29-b770-ebdeb8e55cba" />
-<img width="1214" height="400" alt="image" src="https://github.com/user-attachments/assets/c65ed909-e44b-49d8-89e2-248f5a8d1c87" />
 
 # Step 3: Filter the Points in Bounding Boxes
 - After projecting LiDAR and Radar points into the image, only those points that fall inside each YOLO bounding box are kept.  
