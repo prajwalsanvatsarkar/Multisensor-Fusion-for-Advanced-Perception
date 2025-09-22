@@ -37,6 +37,7 @@ The goal of this project is to build a system that can estimate how far away veh
 
 
 # Step 6: Estimate Mean Absolute Error and Root Mean Squared Error
-- In conclusion, this report presented a multisensor fusion approach for estimating vehicle distances in the images. The system laverages YOLOv5 for object   detection and LiDAR and RADAR point clouds for 3D information, and a weighted average of LiDAR and RADAR distances for robust distance estimation. The final step evaluates the accuracy using Mean Absolute Error (MAE) and Root Mean Square Error (RMSE), achieving a MAE of 5.49 meters and RMSE of 6.67 meters, indicating good overall accuracy. To mitigate these errors, in future instead of filtering projected points in specified bounding box, asegmented mask of vehicle can be considered for estimating the actual vehicle boundary. This ensures that there are no points from environment that are unnecessarily filtered as
-points on vehicle.
+- In conclusion, this report presented a multisensor fusion approach for estimating vehicle distances in the images.
+- The final step evaluates the accuracy using Mean Absolute Error (MAE) and Root Mean Square Error (RMSE), achieving a MAE of 5.49 meters and RMSE of 6.67 meters, indicating good overall accuracy.
+- To resolve these errors, in future instead of filtering projected points in specified bounding box, asegmented mask of vehicle can be considered for estimating the actual vehicle boundary.
 
