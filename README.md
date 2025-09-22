@@ -13,29 +13,30 @@ The goal of this project is to build a system that can estimate how far away veh
 - LiDAR and Radar points are transformed from their own sensor frames into the camera reference frame using the extrinsic calibration (rotation + translation).  
 - The camera intrinsic matrix is then applied to project these 3D points into 2D pixel coordinates.  
 - Finally, the projected points are overlaid on the camera image, so we can visually confirm that LiDAR and Radar align correctly with the detected vehicles. 
-<img width="698" height="257" alt="image" src="https://github.com/user-attachments/assets/bd2a006d-cdad-4168-9f84-b1547bcf443e" />
-<img width="678" height="267" alt="image" src="https://github.com/user-attachments/assets/6e2cbbdf-1ade-4b29-b770-ebdeb8e55cba" />
+<img width="1287" height="427" alt="image" src="https://github.com/user-attachments/assets/503380d9-8510-4a94-9688-f2298e7cb940" />
+<img width="1278" height="430" alt="image" src="https://github.com/user-attachments/assets/338c93cd-e29e-41a6-b4df-a7efb2215f7d" />
+
 
 # Step 3: Filter the Points in Bounding Boxes
 - After projecting LiDAR and Radar points into the image, only those points that fall inside each YOLO bounding box are kept.  
 - This ensures we only work with sensor points that truly belong to the detected vehicles, ignoring the rest of the scene.
-<img width="683" height="266" alt="image" src="https://github.com/user-attachments/assets/40eb0c25-fe17-412e-8bca-f0a64864fd9b" />
-<img width="678" height="266" alt="image" src="https://github.com/user-attachments/assets/b6fb60c8-6a0d-49c2-b592-3f35ccaa0211" />
+<img width="1298" height="431" alt="image" src="https://github.com/user-attachments/assets/45632091-d87f-4882-8c99-81bb4185d04c" />
+<img width="1290" height="433" alt="image" src="https://github.com/user-attachments/assets/0bcbbfd2-37c7-4f11-88c2-a28d0d0c57fc" />
 
 # Step 4: Estimate the Distance
 - For every detected vehicle, we looked at the LiDAR and Radar points that fall inside its bounding box.  
 - From those points, we calculated the average distance to the vehicle for LiDAR and for Radar separately.
-<img width="721" height="273" alt="image" src="https://github.com/user-attachments/assets/87922eb1-ca01-4e75-ab0c-434d719ca7e6" />
+<img width="1303" height="426" alt="image" src="https://github.com/user-attachments/assets/332cb6aa-82f5-4576-a3d0-3530d5ba2da2" />
 
 # Step 5: Calculate Fused Distance
 - After getting LiDAR and Radar distances, we combined them into one fused value.  
 - We gave LiDAR a higher weight (0.7) and Radar a lower weight (0.3), since LiDAR is usually more precise.  
 - The fused distance was calculated using this formula:
 - Fused distance: d_fused = 0.7 * d_LiDAR + 0.3 * d_Radar
+<img width="1291" height="422" alt="image" src="https://github.com/user-attachments/assets/3020e173-d638-4c00-a91e-8981df920566" />
 
-<img width="711" height="258" alt="image" src="https://github.com/user-attachments/assets/da3bc0db-db3a-46ce-ae79-cbd00fdabe51" />
 
 # Step 6: Estimate Mean Absolute Error and Root Mean Squared Error
-In the final step we checked how accurate the distance estimates were using two metrics: Mean Absolute Error (MAE) and Root Mean Square Error (RMSE). Both came out to about 1.13 meters. This means that, on average, our distance estimates were only about a meter off from the actual values. Since MAE and RMSE are almost the same, it also shows there were no big mistakes or outliers. Overall, the system gave very accurate results for estimating vehicle distances.
+- In conclusion, this report presented a multisensor fusion approach for estimating vehicle distances in the images. The system laverages YOLOv5 for object   detection and LiDAR and RADAR point clouds for 3D information, and a weighted average of LiDAR and RADAR distances for robust distance estimation. The final step evaluates the accuracy using Mean Absolute Error (MAE) and Root Mean Square Error (RMSE), achieving a MAE of 5.49 meters and RMSE of 6.67 meters, indicating good overall accuracy. To mitigate these errors, in future instead of filtering projected points in specified bounding box, asegmented mask of vehicle can be considered for estimating the actual vehicle boundary. This ensures that there are no points from environment that are unnecessarily filtered as
+points on vehicle.
 
-<img width="1403" height="452" alt="image" src="https://github.com/user-attachments/assets/a408f3e5-4f6d-4ce9-803c-a16944bc0bef" />
