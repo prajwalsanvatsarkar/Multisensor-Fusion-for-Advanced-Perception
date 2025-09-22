@@ -6,7 +6,7 @@ The goal of this project is to build a system that can estimate how far away veh
 # Step 1: Object Detection with YOLO
 - YOLOv5 is used on the front-camera images to detect vehicles like cars, buses, and trucks.  
 - For each image, the detected vehicles are shown with green boxes and confidence scores, and the results are saved for the next steps.
-  <img width="685" height="252" alt="image" src="https://github.com/user-attachments/assets/a66213a0-7260-4b4a-a97f-84d95f283aff" />
+<img width="1303" height="420" alt="image" src="https://github.com/user-attachments/assets/86771989-ede7-4bd3-9d88-aba05111500c" />
 
 
 # Step 2: Project the point cloud on Image
