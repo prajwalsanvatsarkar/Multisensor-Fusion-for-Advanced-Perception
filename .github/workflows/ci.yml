@@ -26,3 +26,13 @@ jobs:
 
       - name: Run unit tests
         run: python -m pytest tests/ -v
+
+            - name: Package project
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: astyx-fusion-project
+          path: |
+            multisensorfusion.ipynb
+            requirements.txt
+          if-no-files-found: error
