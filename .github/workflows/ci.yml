@@ -27,7 +27,7 @@ jobs:
       - name: Run unit tests
         run: python -m pytest tests/ -v
 
-            - name: Package project
+      - name: Package project
         if: success()
         uses: actions/upload-artifact@v4
         with:
